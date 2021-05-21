@@ -1,6 +1,6 @@
 # Pants Build Tool Tutorial
 
-[![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-python-pants-eins/branches/final.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-python-pants-eins)
+[![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-python-pants/branches/master.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-python-pants)
 
 [Pants](https://www.pantsbuild.org/) is Twitters scalable and performant build tool. Its primary target is Python but more languages can be added via backends.
 
@@ -135,6 +135,12 @@ $ ./pants --changed-since=origin/master \
           --changed-dependees=transitive \
           test
 ```
+
+## Continuous integration
+
+The `final` branch in this repository includes a continuous integration pipeline to build the projects in Semaphore.
+
+![Sample pipeline](https://raw.githubusercontent.com/semaphoreci-demos/semaphore-demo-python-pants/master/pipeline.png)
 
 ## License
 
