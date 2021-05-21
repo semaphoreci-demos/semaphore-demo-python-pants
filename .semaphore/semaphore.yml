@@ -1,0 +1,52 @@
+version: v1.0
+name: Pants Build
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: "Build \U0001F528 "
+    task:
+      prologue:
+        commands:
+          - checkout
+      jobs:
+        - name: "package \U0001F4E6"
+          commands:
+            - checkout
+            - sem-version python 3.8
+            - 'cache restore pants-$SEMAPHORE_GIT_BRANCH,pants-master'
+            - './pants package ::'
+            - 'cache store pants-$SEMAPHORE_GIT_BRANCH,pants-master $HOME/.cache/pants'
+  - name: "Static tests \U0001F9EA"
+    task:
+      prologue:
+        commands:
+          - checkout
+          - sem-version python 3.8
+          - 'cache restore pants-$SEMAPHORE_GIT_BRANCH,pants-master'
+      epilogue:
+        always:
+          commands:
+            - 'cache store pants-$SEMAPHORE_GIT_BRANCH,pants-master $HOME/.cache/pants'
+      jobs:
+        - name: Tests
+          commands:
+            - './pants lint ::'
+            - './pants typecheck ::'
+            - './pants fmt ::'
+  - name: "Unit tests \U0001F50D"
+    task:
+      prologue:
+        commands:
+          - checkout
+          - sem-version python 3.8
+          - 'cache restore pants-$SEMAPHORE_GIT_BRANCH,pants-master'
+      epilogue:
+        always:
+          commands:
+            - 'cache store pants-$SEMAPHORE_GIT_BRANCH,pants-master $HOME/.cache/pants'
+      jobs:
+        - name: Tests
+          commands:
+            - './pants test ::'
