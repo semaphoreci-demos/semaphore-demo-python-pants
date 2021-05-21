@@ -140,7 +140,7 @@ $ ./pants --changed-since=origin/master \
 
 The `final` branch in this repository includes a continuous integration pipeline to build the projects in Semaphore.
 
-![Sample pipeline]()
+![Sample pipeline](https://raw.githubusercontent.com/semaphoreci-demos/semaphore-demo-python-pants/master/pipeline.png)
 
 ## License
 
