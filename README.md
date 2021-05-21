@@ -1,6 +1,6 @@
 # Pants Build Tool Tutorial
 
-[![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-python-pants/branches/master.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-python-pants)
+[![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-python-pants-eins/branches/final.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-python-pants-eins)
 
 [Pants](https://www.pantsbuild.org/) is Twitters scalable and performant build tool. Its primary target is Python but more languages can be added via backends.
 
