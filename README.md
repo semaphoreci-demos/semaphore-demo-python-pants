@@ -1,6 +1,6 @@
 # Pants Build Tool Tutorial
 
-[![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-python-pants/branches/master.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-python-pants)
+[![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-python-pants-eins/branches/final.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-python-pants-eins)
 
 [Pants](https://www.pantsbuild.org/) is Twitters scalable and performant build tool. Its primary target is Python but more languages can be added via backends.
 
@@ -58,14 +58,14 @@ pex_binary(
     name="pex_binary",
     entry_point="main.py",
 )
-``` 
+```
 
 ## Inspecting your code
 
 List available Pants targets for a folder:
 
 ```bash
-$ ./pants list hello_world/: 
+$ ./pants list hello_world/:
 hello_world
 hello_world:ansicolors
 hello_world:pex_binary
@@ -88,7 +88,7 @@ hello_world:requirements.txt
 View dependees (files that depend on this one):
 
 ```bash
-$ ./pants dependees commons/string_utils.py 
+$ ./pants dependees commons/string_utils.py
 commons
 commons:tests
 commons/string_utils_test.py:tests
@@ -134,7 +134,7 @@ Run tests on changed code:
 $ ./pants --changed-since=origin/master \
           --changed-dependees=transitive \
           test
-``` 
+```
 
 ## License
 
