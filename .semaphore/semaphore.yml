@@ -34,7 +34,6 @@ blocks:
           commands:
             - './pants lint ::'
             - './pants typecheck ::'
-            - './pants fmt ::'
   - name: "Unit tests \U0001F50D"
     task:
       prologue:
